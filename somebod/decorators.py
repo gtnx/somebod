@@ -9,7 +9,7 @@ import time
 
 def timed_task(logger, level=logging.INFO):
     """
-    Print time elapsed for executing a function
+        Print time elapsed for executing a function
     """
     def task(func):
         def wrapper(*args, **kwargs):
