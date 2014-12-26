@@ -5,6 +5,14 @@ import optparse
 
 
 class OptionParser(optparse.OptionParser, object):
+    """
+        Option Parser with default options for log level handling
+
+        - log-level defines level for every loggers instanced when the object OptionParser is created
+        - log-filter defines level for specific loggers identified by their names.
+        - Example
+        script.py --log-level info --log-filter lib1:debug,lib2:error
+    """
     def __init__(self, *args, **kwargs):
         super(OptionParser, self).__init__(*args, **kwargs)
         self.add_option("", "--log-level", dest="log_level", default="info", help="verbosity : debug, info, warning, error, critical")
