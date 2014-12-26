@@ -19,3 +19,12 @@ def os_query(qry, logger):
         raise OSError("Cannot execute %(qry)s" % locals())
     else:
         logger.info("[%(duration).2fs], retval=%(retval)s, %(qry)s" % locals())
+
+
+def remove_and_create_directory(directory):
+    os_query("rm -rf %(directory)s" % locals())
+    os_query("mkdir -p %(directory)s" % locals())
+
+
+def create_directory(directory):
+    os_query("mkdir -p %(directory)s" % locals())
