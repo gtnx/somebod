@@ -15,7 +15,7 @@ def intword(val):
     """
     if val is None:
         return ""
-    if isinstance(val, str) or isinstance(val, unicode):
+    if isinstance(val, six.string_types):
         return val
 
     if isinstance(val, decimal.Decimal):
